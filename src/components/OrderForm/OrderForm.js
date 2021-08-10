@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class OrderForm extends Component {
   constructor(props) {
-    // console.log("propsOrderForm", props.addBurritoOrder)
     super();
     this.props = props;
     this.state = {
@@ -28,7 +27,6 @@ handleSubmit = e => {
       ...this.state
   }
 this.clearInputs();
-// this.props.addBurritoOrder(newBurrito);
 if(this.state.name && this.state.ingredients.length) {
   this.props.addBurritoOrder(newBurrito);
   this.clearInputs();

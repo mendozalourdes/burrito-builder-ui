@@ -19,10 +19,10 @@ class App extends Component {
     getOrders()
     .then(response => {
       if(typeof response === 'string') {
-        console.log("errrorResponse", response)
+        // console.log("errrorResponse", response)
         this.setState({error: response})
       } else {
-        console.log("workingResponse", response.orders)
+        // console.log("workingResponse", response.orders)
         this.setState({orders: response.orders})
       }
     })
@@ -32,7 +32,6 @@ class App extends Component {
 
 addBurritoOrder = (newBurrito) => {
     const updatedBurritoOrders = [...this.state.orders, newBurrito]
-    console.log("update", updatedBurritoOrders)
     return fetch('http://localhost:3001/api/v1/orders', {
       method: 'POST',
       body: JSON.stringify(newBurrito),
@@ -46,7 +45,6 @@ addBurritoOrder = (newBurrito) => {
 
 
   render() {
-    console.log("gimme", this.state.orders)
     return (
       <main className="App">
         <header>

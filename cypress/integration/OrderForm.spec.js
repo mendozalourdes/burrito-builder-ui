@@ -60,7 +60,7 @@ describe("Order Form View", () => {
   it("Should be able to see customer order information ", () => {
     cy.get("#Lizet").contains("Customer Name: Lizet");
     cy.get("#ingredientNames").contains(
-      "beanslettucecarnitasqueso frescojalapeno"
+      "beans, lettuce, carnitas, queso fresco, jalapeno"
     );
   });
 

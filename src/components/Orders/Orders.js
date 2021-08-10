@@ -16,7 +16,7 @@ const Orders = (orders) => {
   });
 
   return (
-    <section>
+    <section className="all-orders">
       {/* <h1>Hello</h1> */}
       { orderEls.length ? orderEls : <p>No orders yet!</p> }
     </section>

@@ -28,11 +28,17 @@ handleSubmit = e => {
       ...this.state
   }
 this.clearInputs();
-this.props.addBurritoOrder(newBurrito);
+// this.props.addBurritoOrder(newBurrito);
+if(this.state.name && this.state.ingredients.length) {
+  this.props.addBurritoOrder(newBurrito);
+  this.clearInputs();
+
+} else {
+  this.clearInputs();
+  return null
+
 }
-
-
-
+}
 
 
   clearInputs = () => {

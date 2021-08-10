@@ -49,7 +49,7 @@ if(this.state.name && this.state.ingredients.length) {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
     const ingredientButtons = possibleIngredients.map(ingredient => {
       return (
-        <button key={ingredient} name={ingredient} onClick={e => this.handleIngredientChange(e)}>
+        <button className="ingredientsBtns" id="ingredientsBtns" key={ingredient} name={ingredient} onClick={e => this.handleIngredientChange(e)}>
           {ingredient}
         </button>
       )
@@ -69,7 +69,7 @@ if(this.state.name && this.state.ingredients.length) {
 
         <p>Order: { this.state.ingredients.join(', ') || 'Nothing selected' }</p>
 
-        <button onClick={e => this.handleSubmit(e)}>
+        <button className="submit-btn" id="submitBtn" onClick={e => this.handleSubmit(e)}>
           Submit Order
         </button>
       </form>

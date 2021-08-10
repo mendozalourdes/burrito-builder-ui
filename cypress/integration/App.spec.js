@@ -37,7 +37,15 @@ describe ('Main Page View', () => {
 
     it('Should be able to see a form upon page load', () => {
         cy.get('form')
+        cy.get('button').should('have.class', 'ingredientsBtns')
+        cy.get('button').should('have.class', 'submit-btn')
     });
+
+    it('Should be able to see customer order information ', () => {
+        cy.get('#Lizet').contains("Customer Name: Lizet")
+        cy.get('#ingredientNames').contains('beanslettucecarnitasqueso frescojalapeno')
+    });
+
 
     
 });

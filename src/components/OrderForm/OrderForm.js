@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class OrderForm extends Component {
   constructor(props) {
+    // console.log("propsOrderForm", props.addBurritoOrder)
     super();
     this.props = props;
     this.state = {
@@ -20,10 +21,19 @@ handleIngredientChange = e => {
   this.setState({ingredients: [...this.state.ingredients, e.target.name]})
 }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.clearInputs();
+handleSubmit = e => {
+  e.preventDefault();
+  const newBurrito = {
+      id: Date.now(),
+      ...this.state
   }
+this.clearInputs();
+this.props.addBurritoOrder(newBurrito);
+}
+
+
+
+
 
   clearInputs = () => {
     this.setState({name: '', ingredients: []});

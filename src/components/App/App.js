@@ -22,14 +22,15 @@ class App extends Component {
         console.log("errrorResponse", response)
         this.setState({error: response})
       } else {
-        console.log("workingResponse", response)
-        this.setState({orders: response})
+        console.log("workingResponse", response.orders)
+        this.setState({orders: response.orders})
       }
     })
     .catch(err => err.message)
 }
 
   render() {
+    console.log("gimme", this.state.orders)
     return (
       <main className="App">
         <header>
@@ -37,7 +38,7 @@ class App extends Component {
           <OrderForm />
         </header>
 
-        <Orders orders={this.state.orders}/>
+        {this.state.orders && !this.state.error && <Orders orders={this.state.orders}/>}
       </main>
     );
   }

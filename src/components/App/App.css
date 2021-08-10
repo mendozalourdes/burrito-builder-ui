@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App::before {
@@ -12,6 +13,15 @@
   opacity: 0.2; 
   z-index: -1;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-image: url('../../burritos.jpg');
+}
+
+.Burrito-title {
+  font-size: 5em;
+}
+
+a {
+  color: rgb(102, 22, 22);
+  text-decoration: none;
 }

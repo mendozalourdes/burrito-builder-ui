@@ -42,13 +42,15 @@ addBurritoOrder = (newBurrito) => {
       this.setState({ orders: updatedBurritoOrders })
     })
   }
-
+ 
 
   render() {
     return (
       <main className="App">
         <header>
-          <h1>Burrito Builder</h1>
+        {/* <h1 className="Burrito-title">Burrito Builder</h1> */}
+
+          <h1 className="Burrito-title"><a href="https://www.chipotle.com/">Burrito Builder</a></h1>
           {this.state.orders && <OrderForm props={this.state} addBurritoOrder={this.addBurritoOrder}/>}
         </header>
 

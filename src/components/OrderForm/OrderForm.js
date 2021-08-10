@@ -49,7 +49,7 @@ if(this.state.name && this.state.ingredients.length) {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];
     const ingredientButtons = possibleIngredients.map(ingredient => {
       return (
-        <button className="ingredientsBtns" id="ingredientsBtns" key={ingredient} name={ingredient} onClick={e => this.handleIngredientChange(e)}>
+        <button className="ingredientsBtns" id={ingredient} key={ingredient} name={ingredient} onClick={e => this.handleIngredientChange(e)}>
           {ingredient}
         </button>
       )
@@ -58,6 +58,7 @@ if(this.state.name && this.state.ingredients.length) {
     return (
       <form>
         <input
+        id="nameInput"
           type='text'
           placeholder='Name'
           name='name'

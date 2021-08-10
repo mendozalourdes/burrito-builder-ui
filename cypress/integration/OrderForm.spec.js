@@ -37,10 +37,8 @@ describe ('Main Page View', () => {
                         "id": 1,
                         "name": "Luly",
                         "ingredients": [
-                        "frijoles",
-                        "pico de gallo",
-                        "carne asada",
-                        "queso fresco",
+                        "beans",
+                        "steak",
                         "cilantro"
                         ]
                         } ] 
@@ -70,6 +68,16 @@ describe ('Main Page View', () => {
         cy.get('#ingredientNames').contains('beanslettucecarnitasqueso frescojalapeno')
     });
 
+    it('Should be able to fill out the form ', () => {
+        cy.get('form')
+        cy.get('#nameInput').type('Luly')
+        cy.get('#beans').click()
+        cy.get('#steak').click()
+        cy.get('#cilantro').click()
+        cy.get('#submitBtn').should('have.class', 'submit-btn').click()
+        cy.get('#Luly').contains("Customer Name: Luly")
+
+    });
     
 
 

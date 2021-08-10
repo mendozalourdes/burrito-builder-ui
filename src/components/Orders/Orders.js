@@ -3,7 +3,7 @@ import './Orders.css';
 import OneOrder from '../OneOrder/OneOrder';
 
 const Orders = (orders) => {
-  console.log("orders!", orders.orders)
+  // console.log("orders!", orders.orders)
   const orderEls = orders.orders.map(order => {
     return (
       <OneOrder

@@ -15,10 +15,19 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   getOrders()
-  //     .catch(err => console.error('Error fetching:', err));
-  // }
+  componentDidMount() {
+    getOrders()
+    .then(response => {
+      if(typeof response === 'string') {
+        console.log("errrorResponse", response)
+        this.setState({error: response})
+      } else {
+        console.log("workingResponse", response)
+        this.setState({orders: response})
+      }
+    })
+    .catch(err => err.message)
+}
 
   render() {
     return (
